@@ -19,8 +19,7 @@ jobs:
         run: | 
           python -m pip install --upgrade pip
           python -m pip install git+https://gitlab.com/da_doomer/markdown-slides.git@fd27dd09cf90f00093a393338e08953c8d65d68e
-          mkdir -p slides
-          mdslides slides.md --output_dir ./slides/
+          mdslides slides.md --output_dir .
       - name: Configure github
         run: git config user.name 'github-actions[bot]' && git config user.email 'github-actions[bot]@users.noreply.github.com'
       - name: Commit BUMP Version & Push

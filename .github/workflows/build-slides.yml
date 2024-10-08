@@ -19,19 +19,18 @@ jobs:
         run: | 
           # abort on errors
           set -e
-
           # Install dependencies
           python -m pip install --upgrade pip
           python -m pip install git+https://gitlab.com/da_doomer/markdown-slides.git@fd27dd09cf90f00093a393338e08953c8d65d68e
           mkdir -p slides
           mdslides slides.md --output_dir ./slides/
           cd slides
-          git config user.name 'github-actions[bot]' && git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
           git init
           git add -A
           git commit -m "Build slides"
           cd ..
-            
       - name: Force push to destination branch
         uses: ad-m/github-push-action@v0.5.0
         with:

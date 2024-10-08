@@ -26,6 +26,6 @@ jobs:
       - name: Commit BUMP Version & Push
         run: |
           git checkout gh-pages
-          git add slides/*
+          git add dist/* plugin/* LICENSE index.html
           git commit -m "Deploy slides"
           git push origin gh-pages

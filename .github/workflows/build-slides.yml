@@ -25,9 +25,9 @@ jobs:
           mkdir -p slides
           mdslides slides.md --output_dir ./slides/
           cd slides
+          git init
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git init
           git add -A
           git commit -m "Build slides"
           cd ..

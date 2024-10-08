@@ -25,7 +25,7 @@ jobs:
         run: git config user.name 'github-actions[bot]' && git config user.email 'github-actions[bot]@users.noreply.github.com'
       - name: Commit BUMP Version & Push
         run: |
-          git checkout gh-pages
           git add dist/* plugin/* LICENSE index.html
           git commit -m "Deploy slides"
+          git checkout gh-pages
           git push origin gh-pages
